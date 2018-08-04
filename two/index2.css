@@ -1,0 +1,40 @@
+﻿ * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    .cont{
+       font-size: 20px;
+        width: 45%;
+        display: inline-block;
+        
+        margin: 10px;
+       
+}
+
+.cont img{
+    width: 100%;
+}
+
+.cont .g-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 24px 0;
+}
+.good-price,.glyphicon-plus-sign{
+    color:red;
+}
+.glyphicon-plus-sign{
+      
+   cursor: pointer;
+    margin-bottom: 20px;
+}
+.navbar-image {
+      height: 30px;
+      Width: 30px;
+    }

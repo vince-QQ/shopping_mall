@@ -1,0 +1,199 @@
+﻿* {
+      margin: 0;
+      padding: 0;
+    }
+    
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+    
+    .title3 {
+      height: 60px;
+    }
+    
+    .focusimg {
+      width:1200px;
+      height: 300px;
+      margin: 5px auto 15px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .focusimg img {
+      width: 1200px;
+      height: 300px;
+    }
+    
+    .focusimg ul .pic {
+      display: none;
+    }
+    
+    .focusimg ul .current {
+      display: block;
+    }
+    
+    .focusimg ol {
+      position: absolute;
+      left: 45%;
+      bottom: 5px;
+    }
+    
+    .focusimg ol li {
+      float: left;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #ff7101;
+      margin-right: 12px;
+      text-align: center;
+      line-height: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .focusimg ol .but {
+      background: #fff;
+      color: #ff7101;
+    }
+    
+    .focusimg ol .current {
+      color: #fff;
+      background: #ff7101;
+    }
+    
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .content-four-first,
+    .content-four-second,
+    .content-four-third,
+    .content-four-forth {
+      height: 140px;
+      background: white;
+      border-bottom: 0.1px solid gray;
+    }
+    
+    .four-image {
+      float: left;
+      width: 160px;
+      height: 120px;
+    }
+    
+    .four-text {
+      float: left;
+      width: 300px;
+      height: 120px;
+    }
+    
+    .four-text-one {
+      margin-top: 15px;
+      margin-bottom: 7px;
+    }
+    
+    .four-text-one-span1 {
+      border: 1px solid orange;
+      color: orange;
+      border-radius: 6px;
+    }
+    
+    .four-text-one-span2 {
+      color: red;
+    }
+    
+    .four-text-two-span {
+      margin-left: 30px;
+    }
+    
+    .navbar-image {
+      height: 30px;
+      Width: 30px;
+    }
+    
+    .wrapper {
+      left: 32%;
+      top: 20px;
+      height: 35px;
+      position: absolute;
+      
+    }
+    
+    .search-box-arrow-left,
+    .message-logo {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      
+    }
+    
+    .search-box-arrow-left {
+      margin-left: 10px;
+    }
+    
+    .message-logo {
+      margin-left: 380px;
+    }
+    
+    .search-box {
+      width: 320px;
+      height: 35px;
+      position: absolute;
+      
+      border-radius: 10px;
+      margin-left: 55px;
+    }
+    
+    .search-logo {
+      position: absolute;
+      margin-left: 10px;
+      width: 35px;
+      height: 35px;
+      border: 1px solid black;
+      display: inline-block;
+    }
+    
+    .search-input {
+      position: absolute;
+      margin-left: 45px;
+      width: 265px;
+      height: 35px;
+      border: 1px solid blue;
+    }
+    
+    .search-main-input {
+      width: 265px;
+      line-height: 24px;
+      border: none;
+    }
+    
+    .content-wrapper-two {
+      position: relative;
+      height: 80px;
+      background: white;
+    }
+    
+    .content-wrapper-two-image {
+      vertical-align: -18px;
+    }
+    
+    .content-wrapper {
+      position: relative;
+      height: 100px;
+      background: white;
+    }
+    
+    .page4-four-part-image,
+    .page4-four-part-text {
+      margin-left: 30%;
+    }
+    
+    .content-three-title {
+      vertical-align: -3px;
+    }
+    
+    .home-text {
+      margin-left: 30%;
+    }

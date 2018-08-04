@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="device-width,initial-scale=1">
+  <link rel="stylesheet" href="index1.css">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  <script src="../index1.js"></script>
+  <script>
+window.onload=function()
+{
+	var current_index=0;
+	var timer=window.setInterval(autoChange,3000);
+	var button_li=document.getElementById("button").getElementsByTagName("li");
+	var pic_li=document.getElementById("focus_pic").getElementsByTagName("li");
+	function autoChange()
+	{
+		++current_index;
+		if(current_index==button_li.length)
+		{
+			current_index=0;	
+		}	
+		for(var i=0;i<button_li.length;i++)
+		{
+			if(i==current_index)
+			{
+				button_li[i].className="current";
+				pic_li[i].className="current";
+			}
+			else
+			{
+				button_li[i].className="but";
+				pic_li[i].className="pic";	
+			}
+			
+		}
+	}
+}
+
+$(document).ready(function(){//页面一加载完成即可显示json文件的数据
+  
+    $.getJSON("http://yunxtec.com/test/discount.php",function(result){//因为之前已经插入一些符号或注释，所以直接用ID属性进行获取标签
+        $("#name1").append(result.discount[0].goods);   //对第一个优惠商品广告进行插入获取的json数据
+        $("#price1").append(result.discount[0].price);
+        $("#dprice1").append(result.discount[0].dprice);
+        $("#img1").attr("src",result.discount[0].img);
+        $("#html1").attr("href",result.discount[0].url);
+
+        $("#name2").append(result.discount[1].goods);  //对第二个优惠商品广告进行插入获取的json数据 
+        $("#price2").append(result.discount[1].price);
+        $("#dprice2").append(result.discount[1].dprice);
+        $("#img2").attr("src",result.discount[1].img);
+        $("#html2").attr("href",result.discount[1].url);
+
+        $("#name3").append(result.discount[2].goods);  //对第三个优惠商品广告进行插入获取的json数据 
+        $("#price3").append(result.discount[2].price);
+        $("#dprice3").append(result.discount[2].dprice);
+        $("#img3").attr("src",result.discount[2].img);
+        $("#html3").attr("href",result.discount[2].url);
+
+        $("#name4").append(result.discount[3].goods); //对第四个优惠商品广告进行插入获取的json数据  
+        $("#price4").append(result.discount[3].price);
+        $("#dprice4").append(result.discount[3].dprice);
+        $("#img4").attr("src",result.discount[3].img);
+        $("#html4").attr("href",result.discount[3].url);
+  });
+ $.ajax({//利用ajax对json文件进行获取解析
+      url:"http://yunxtec.com/test/adlist.php",
+      type:"post",
+      success:function(result){
+
+        var data=eval("("+result+")");//解析获取的json文件，并对里面的字符串用不同的数组进行存储
+        var g=data.adlist;
+        var imgname=[];
+		    var remind=[];
+        var urls=[];
+         for(var i in g)//利用循环给把数值赋给对应的数组
+         {
+         imgname.push(g[i].img);
+		     remind.push(g[i].name);
+         urls.push(g[i].url);
+         }
+         var d=document.getElementById("focus_pic");
+         var pic_img=d.getElementsByTagName("img");//给图片加上路径
+        for(var i in imgname)
+	    	{
+         pic_img[i].src=imgname[i];
+		     
+	     }
+       for( var j in remind)//给图片的alt加上数据
+       {
+        pic_img[i].alt=remind[i];
+       }
+       var urlname=d.getElementsByTagName("a");//给a标签的href加上URL
+       for(var k in urlname)
+       {
+         urlname[k].href=urls[k];
+       }
+      }
+  });
+});
+
+  </script>
+
+</head>
+
+<body>
+
+  <div data-role="page" id="pageone">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <h1>****欢迎来到陈庆国的微商城****</h1>
+    </div>
+
+
+    <div data-role="content">
+
+      <div class="focusimg">
+        <div id="focus_pic">
+          <ul>
+            <li class="current">
+              <a href="#"><img src="#" alt="" /></a>
+            </li>
+            <li class="pic">
+              <a href="#"><img src="#" alt="" /></a>
+            </li>
+            <li class="pic">
+              <a href="#"><img src="#" alt="" /></a>
+            </li>
+            <li class="pic">
+              <a href="#"><img src="#" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+        <ol id="button">
+          <li class="current">1</li>
+          <li class="but">2</li>
+          <li class="but">3</li>
+          <li class="but">4</li>
+        </ol>
+
+        <div class=wrapper>
+
+          <div class="search-box">
+            <input type="search" name="search" id="search" placeholder="巨大优惠 尽在足迹商城">
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="content-wrapper">
+        <div class="ui-grid-c">
+          <div class="ui-block-a">
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:30%">
+              <span class="home-image"><image src="images/jifenduihuan.jpg" style="width:65px;height:65px"></span>
+              <br>
+              <span class="home-text">积分兑换</span>
+            </a>
+
+          </div>
+          <div class="ui-block-b">
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:30%">
+              <span class="home-image"><image src="images/zhaopianchengshu.jpg" style="width:65px;height:65px"></span>
+              <br>
+              <span class="home-text">照片成书</span>
+            </a>
+
+          </div>
+          <div class="ui-block-c">
+
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:30%">
+              <span class="home-image"><image src="images/xianshiqianggou.jpg" style="width:65px;height:65px"></span>
+              <br>
+              <span class="home-text">限时抢购</span>
+            </a>
+
+          </div>
+          <div class="ui-block-d">
+
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:30%">
+              <span class="home-image"><image src="images/jinianliwu.jpg" style="width:65px;height:65px"></span>
+              <br>
+              <span class="home-text">纪念礼物</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="line" style="border:0.1px solid gray"></div>
+
+      <div class="content-wrapper-two">
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:20%;margin-top:10px">
+              <span class="content-wrapper-two-image"><image src="images/chuanyiliping.jpg" style="width:60px;height:50px"></span>&nbsp&nbsp创意礼品
+            </a>
+          </div>
+          <div class="ui-block-b">
+            <a href="../link/link.html"  target="_blank" data-ajax="false" style="color:gray;margin-left:20%;margin-top:10px">
+              <span class="content-wrapper-two-image"><image src="images/jierliwu.jpg" style="width:60px;height:50px"></span>&nbsp&nbsp节日礼物
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="content-three">
+        <span class="content-three-title"> <image src="images/3.jpg" style="width:20px;height:20px"></span>&nbsp&nbsp今日优惠
+      </div>
+
+      <div class="content-four">
+
+        <div class="content-four-first">
+          <div class="four-image">
+            <a href="#" id="html1">
+              <image id="img1" src="#" style="width:90px;height:90px;margin-left:15px;margin-top:15px">
+            </a>
+          </div>
+
+          <div class="four-text">
+            <div class="four-text-one">
+              <span class="four-text-one-span1">今日</span>
+              <span id="name1"></span>
+            </div>
+            <span id="price1" class="four-text-one-span2">¥ </span>
+            <div calss="four-text-two" style="margin-top:15px">
+              <del id="dprice1">原价：¥</del>
+              <span class="four-text-two-span">324人已购买</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="content-four-second">
+          <div class="four-image">
+            <a href="#" id="html2">
+              <image src="#" id="img2" style="width:90px;height:90px;margin-left:15px;margin-top:15px">
+            </a>
+          </div>
+
+          <div class="four-text">
+            <div class="four-text-one">
+              <span class="four-text-one-span1">今日</span>
+              <span id="name2"></span>
+            </div>
+            <span id="price2" class="four-text-one-span2">¥ </span>
+            <div calss="four-text-two" style="margin-top:15px">
+              <del id="dprice2">原价：¥</del>
+              <span class="four-text-two-span">2000人已购买</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-four-first">
+          <div class="four-image">
+            <a href="#" id="html3">
+              <image id="img3" src="#" style="width:90px;height:90px;margin-left:15px;margin-top:15px">
+            </a>
+          </div>
+
+          <div class="four-text">
+            <div class="four-text-one">
+              <span class="four-text-one-span1">今日</span>
+              <span id="name3"></span>
+            </div>
+            <span id="price3" class="four-text-one-span2">¥ </span>
+            <div calss="four-text-two" style="margin-top:15px">
+              <del id="dprice3">原价：¥</del>
+              <span class="four-text-two-span">789人已购买</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="content-four-second">
+          <div class="four-image">
+            <a href="#" id="html4">
+              <image src="#" id="img4" style="width:90px;height:90px;margin-left:15px;margin-top:15px">
+            </a>
+          </div>
+
+          <div class="four-text">
+            <div class="four-text-one">
+              <span class="four-text-one-span1">今日</span>
+              <span id="name4"></span>
+            </div>
+            <span id="price4" class="four-text-one-span2">¥ </span>
+            <div calss="four-text-two" style="margin-top:15px">
+              <del id="dprice4">原价：¥</del>
+              <span class="four-text-two-span">26人已购买</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+
+
+      </div>
+
+
+
+    </div>
+
+    <div data-role="footer" data-theme="d" data-position="fixed">
+
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a href="../one/index1.html" class="ui-btn-active ui-state-persist" data-prefetch="true" data-ajax="false">
+              <image src="images/home.PNG" class="navbar-image">
+                <br>
+                <span>首页<span></a></li>
+          <li><a href="../two/index2.html" data-ajax="false">   
+              <image src="images/fenlei.PNG"class="navbar-image">     
+              <br>
+             <span>分类<span></a></li>
+          <li><a href="../three/index3.html" data-ajax="false">
+              <image src="images/buycar1.PNG"class="navbar-image">     
+              <br>
+              <span>购物车<span></a></li>
+          <li><a href="../four/index4.html" data-ajax="false">   <image src="images/my1.PNG"class="navbar-image">     
+              <br>
+              <span>我的<span></a></li>
+      </ul>
+
+    </div>
+ 
+  </div>
+
+</div> 
+
+</body>
+</html>

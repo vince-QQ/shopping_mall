@@ -1,0 +1,67 @@
+﻿ *{
+     margin:0;
+     padding:0;
+   }
+   a{
+     text-decoration: none;
+
+   }
+   .wrapper{
+     height:230px;
+     width:800px;
+     position: relative;
+     
+     margin-left:50%;
+     
+     left:-400px;
+    
+
+   }
+   .one,.two,.three,.four,.five{
+     height:100px;
+     width:100px;
+     border-radius:50%;
+   }
+
+   .one{
+     border:10px solid red;
+     position:absolute;
+     left:200px;
+     top:30px;
+   }
+   .two{
+     border:10px solid green;
+     position: absolute;
+     left:340px;
+     top:30px;
+   }
+   .three{
+     border: 10px solid yellow;
+     position: absolute;
+     left:480px;
+     top:30px;
+   }
+   .four{
+     border: 10px solid blue;
+     position: absolute;
+     left:270px;
+     top:90px;
+   }
+   .five{
+     border:10px solid brown;
+     position: absolute;
+     left: 410px;
+     top:90px;
+   }
+   .egao{
+     
+     font-size: 40px;
+     position: relative;
+     margin-left:40%;
+     left:-170px;
+     margin-top:30px;
+   }
+   .title{
+     margin-left:35%;
+     color:red;
+   }

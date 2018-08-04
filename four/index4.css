@@ -1,0 +1,166 @@
+﻿* {
+      margin: 0;
+      padding: 0;
+    }
+    
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+    
+    .header-wrapper {
+      height: 200px;
+      background-image: url("forth-image/beijing1.jpg");
+      background-size: contain;
+      position: relative;
+    }
+    
+    .head-image {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      
+    }
+    
+    .image {
+      width: 110px;
+      height: 110px;
+      margin-left: 40px;
+      margin-top: 20px;
+      border-radius: 50%;
+     
+    }
+    
+    .nichen {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      margin-left: 160px;
+      
+    }
+    
+    .sanjiao {
+      float: right;
+      height: 150px;
+      width: 150px;
+      margin-right: 50px;
+      
+    }
+    
+    .arrow-right {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-left: 70px;
+      margin-top: 35px;
+      border: 1px solid black;
+    }
+    
+    .name {
+      display: inline-block;
+      width: 100px;
+      height: 20px;
+      margin-top: 40px;
+      color: white;
+    }
+    
+    .jifen {
+      display: inline-block;
+      width: 100px;
+      height: 20px;
+      margin-top: 10px;
+      color: white;
+    }
+    
+    .second-wrapper {
+      height: 50px;
+      background-color: saddlebrown;
+      position: relative;
+    }
+    
+    .one {
+      width: 120px;
+      height: 50px;
+      float: left;
+      margin-left: 8%;
+      margin-top: 10px;
+    }
+    
+    .two {
+      width: 120px;
+      height: 50px;
+      float: left;
+      margin-left: 18%;
+      margin-top: 10px;
+    }
+    
+    .three {
+      width: 120px;
+      height: 50px;
+      float: right;
+      margin-right: 8%;
+      margin-top: 10px;
+    }
+    
+    .three-wrapper {
+      height: 50px;
+      background-image: url();
+      background-color: white;
+      position: relative;
+      border-bottom: 0.1px solid gray;
+    }
+    
+    .three-image {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+    
+    }
+    
+    .three-image1 {
+      width: 30px;
+      height: 30px;
+      margin-left: 15px;
+      margin-top: 10px;
+      
+      border: 1px solid black;
+    }
+    
+    .dingdan {
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      margin-left: 80px;
+    }
+    
+    .sanjiao1 {
+      height: 50px;
+      width: 50px;
+      float: right;
+      right: 30px;
+    }
+    
+    .arrow-right1 {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+      margin-top: 10px;
+      border: 1px solid black;
+    }
+    
+    .all-dingdan {
+      margin-top: 16px;
+      position: absolute;
+      color: gray;
+    }
+    
+
+    
+    .navbar-image {
+      height: 30px;
+      Width: 30px;
+    }
+    .page4-four-part-text{
+      margin-left:30%;
+    }

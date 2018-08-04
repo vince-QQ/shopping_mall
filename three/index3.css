@@ -1,0 +1,49 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+            
+ .navbar-image {
+    height: 30px;
+    width: 30px;
+    }
+
+    .cont{
+    font-size: 20px;
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+.cont a{
+    float: left;
+}
+.wrapper img{
+    padding: 10px;
+    padding-right: 20px; 
+}
+.miaoshu{
+    padding-top: 24px;
+    line-height: 50px;
+}
+.good-price{
+    color:red;
+}
+
+.good-sum{
+    float: right;
+    margin-right: 30px;
+}
+button{
+    width: 200px;
+    display: block;
+    
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    background-color: gray;
+    
+}
+button:hover{
+    background:red;
+}
